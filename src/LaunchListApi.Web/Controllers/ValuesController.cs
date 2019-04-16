@@ -14,7 +14,8 @@ namespace LaunchListApi.Web.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            return new string[] { "value1", "value2" };
+            throw new Exception("outer exception", new Exception("inner exception1", new Exception("inner exception 2")));
+            //return new string[] { "value1", "value2" };
         }
 
         // GET api/values/5
